@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SnackBox Delivery & Subscription</title>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <!-- Optional: Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+  />
+
+  <style>
+    /* --- GLOBAL DARK THEME STYLES --- */
+    body {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      position: relative; /* for overlay positioning */
+      min-height: 80vh;   /* general baseline for visual sections */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 80px 0; /* top/bottom spacing */
+    }
+
+    /* Semi-transparent overlay for text readability on background images */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: #eb5e28;
+      border-color: #eb5e28;
+    }
+    .btn-primary:hover {
+      background-color: #c9481f;
+      border-color: #c9481f;
+    }
+
+    .btn-delivery {
+      background-color: #a6182c;
+      border-color: #a6182c;
+    }
+    .btn-delivery:hover {
+      background-color: #861324;
+      border-color: #861324;
+    }
+
+    /* --- NAVBAR STYLES --- */
+    .navbar-dark .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #eb5e28;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    /* --- BACKGROUND IMAGES FOR EACH SECTION --- */
+    #hero {
+      background: url('/img/hero.jpg') center center/cover no-repeat;
+      min-height: 100vh; /* the hero is usually taller */
+    }
+
+    #about {
+      background: url('/img/about.jpg') center center/cover no-repeat;
+    }
+
+    #plans {
+      background: url('/img/plans.jpg') center center/cover no-repeat;
+    }
+
+    /* Footer uses a simpler solid background to keep text readable */
+    footer {
+      background-color: #111111;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    /* --- RESPONSIVE STYLES --- */
+    @media (max-width: 767px) {
+      #hero {
+        min-height: 70vh;
+      }
+      .overlay h1 {
+        font-size: 1.75rem;
+      }
+      .overlay p.lead {
+        font-size: 1rem;
+      }
+      .overlay h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#hero">SnackBox</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#plans">Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="overlay">
+      <h1 class="display-4 fw-bold">Better Snacks. Fast Delivery.</h1>
+      <p class="lead mt-3">
+        When the munchies hit, we’ve got you covered! Quick delivery & flexible subscriptions.
+      </p>
+      <!-- Call-to-Action Buttons -->
+      <div class="mt-4">
+        <a href="#plans" class="btn btn-primary btn-lg me-2">Subscribe Now</a>
+        <a href="#" class="btn btn-delivery btn-lg">Delivery Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="overlay">
+      <h2>About SnackBox</h2>
+      <p class="mt-4">
+        At SnackBox, we believe that craving something delicious shouldn’t require a trip 
+        to the store. We’ve curated the best selection of salty, sweet, and savory treats, 
+        packaged fresh and shipped fast. Whether you’re binging your favorite show, pulling 
+        an all-nighter at work, or just in the mood for something tasty, SnackBox is here to 
+        deliver whenever the munchies strike.
+      </p>
+    </div>
+  </section>
+
+  <!-- SUBSCRIPTION PLANS SECTION -->
+  <section id="plans">
+    <div class="overlay">
+      <h2>Choose Your Plan</h2>
+      <p class="text-muted">Flexible options for every snacker—no long-term commitments, cancel anytime.</p>
+      <div class="container mt-5">
+        <div class="row g-4 justify-content-center">
+          <!-- Single Box -->
+          <div class="col-md-4">
+            <div class="card text-dark">
+              <div class="card-body text-center">
+                <h3 class="card-title">Single Box</h3>
+                <p class="card-text mt-3">
+                  Perfect for a quick fix. Order one box of curated snacks delivered right to your door.
+                </p>
+                <p class="fw-bold mt-3">$15</p>
+                <a href="#" class="btn btn-primary">Order Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Monthly Subscription -->
+          <div class="col-md-4">
+            <div class="card text-dark">
+              <div class="card-body text-center">
+                <h3 class="card-title">Monthly Subscription</h3>
+                <p class="card-text mt-3">
+                  Get a new variety of snacks every month. Cancel anytime, satisfaction guaranteed!
+                </p>
+                <p class="fw-bold mt-3">$14/month</p>
+                <a href="#" class="btn btn-primary">Subscribe</a>
+              </div>
+            </div>
+          </div>
+          <!-- Family Plan -->
+          <div class="col-md-4">
+            <div class="card text-dark">
+              <div class="card-body text-center">
+                <h3 class="card-title">Family Plan</h3>
+                <p class="card-text mt-3">
+                  Bigger boxes, more snacks. Enough for everyone at home or the entire office crew.
+                </p>
+                <p class="fw-bold mt-3">$25/month</p>
+                <a href="#" class="btn btn-primary">Choose Plan</a>
+              </div>
+            </div>
+          </div>
+        </div> <!-- row -->
+      </div> <!-- container -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 SnackBox. All rights reserved.</p>
+      <p class="mb-0">Reach us at: <a href="mailto:info@snackbox.com">info@snackbox.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (for responsive navbar, etc.) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>
